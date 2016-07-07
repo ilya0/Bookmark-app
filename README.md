@@ -8,3 +8,9 @@
 - figure out where to put it so that I can always use it
     - I'm thinking maybe put it in the github pages and just not link it some where, it could be just a page
     
+
+
+Front end react - need to learn this
+make intial from html and css
+
+Node back end with mongoDB for database
