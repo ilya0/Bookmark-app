@@ -4,6 +4,11 @@ var express = require('express');
 // requires request node modules
 var app = express();
 //app instance of express
+var db =
+
+
+
+
 var port = process.env.PORT || 3000;
 //  sets the listining port
 var linkrouter = require('./routes/links');
