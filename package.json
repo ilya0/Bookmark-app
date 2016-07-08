@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ilya0/Bookmark_app#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.5.3"
   }
 }
