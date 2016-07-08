@@ -14,7 +14,7 @@ app.get('/', function(req,res){
   res.json({message:'hello, world!'});
 });
 
-app.use('/links', linkrouter);
+  app.use('/links', linkrouter);
 // get reddit if routes start with reddit
 
 app.listen(port, function(){
