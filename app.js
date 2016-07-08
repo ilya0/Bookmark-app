@@ -6,11 +6,16 @@ var port    = process.env.PORT || 3000; //  sets the listining port
 
 
 
-// app.get('/', function(req,res){
-//   res.json({message:'hello, world!'});
-// });
+app.get('/', function(req,res){
+  res.json({message:'hello, world!'});
+});
 
-//   app.use('/links', linkrouter);
+
+app.get('/stored', function(req,res){
+  res.json({message:'this is all the stored stuff!'});
+});
+
+ // app.use('/links', linkrouter);
 
 
 app.listen(port, function(){
