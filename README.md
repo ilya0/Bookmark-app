@@ -14,3 +14,13 @@ Front end react - need to learn this
 make intial from html and css
 
 Node back end with mongoDB for database
+
+
+
+### to do list
+
+- front end
+-organize mvc
+- routes
+- initialize db
+- push to heroku
