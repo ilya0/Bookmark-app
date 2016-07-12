@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 
 
 
-var linkSchema = new mongoose.Schema(
+var linkSchema = new mongoose.Schema({
           link: String,
-          title:String
+          title: String
 
-);
+});
 
 
 var Linklist = mongoose.model('linklist', linkSchema);
