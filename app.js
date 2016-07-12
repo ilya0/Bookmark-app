@@ -12,9 +12,15 @@ app.get('/', function(req,res){
 });
 
 
-app.get('/stored', function(req,res){
-  res.json({message:'this is all the stored stuff!'});
+
+app.post('/', function(req, res, next){
+  console.log(req.body);
+  var newLink = new Link();
+  newLink.link = req.body.link;
+  newLink.name = req.body.name;
+
 });
+
 
  // app.use('/links', linkrouter);
 
