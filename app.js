@@ -3,7 +3,7 @@ var app           = express(); //app instance of express
 var db            = require('./db'); // added db
 var bodyParser    = require('body-parser');
 var port          = process.env.PORT || 3000; //  sets the listining port
-var Linklist = require('linkmodel.js');
+var Linklist      = require('./linkmodel.js'); // model linking
 
 // var linkrouter = require('./routes/links'); //router page
 
