@@ -1,4 +1,5 @@
-var linkcontroller = {};
+var linkcontroller  = {};
+var Linklist        = require('./model/link_model.js'); // model linking
 
 linkcontroller.index = function(req, res) {
   res.send("this is the index")
