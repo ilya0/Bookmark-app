@@ -1,5 +1,6 @@
 var linkcontroller  = {};
 var Linklist        = require('../model/link_model.js'); // model linking
+var mongoose        = require('mongoose');
 
 
 //this is the index page, and returns all the links
