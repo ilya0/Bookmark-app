@@ -4,21 +4,27 @@ var Linklist        = require('../model/link_model.js'); // model linking
 
 //this is the index page, and returns all the links
 linkcontroller.index = function(req, res) {
-  res.send("this is the index")
-  var allthelinks = Linklist.find({},function(err,allthelinks){
-    if(err){
-      throw err;
-    }
-    //res.json(instructorslist);
-   res.json(allthelinks);
-  });
+  res.json({message:"this should be the index page"}); //test line to see if index works
 
+
+
+  // var allthelinks = Linklist.find({},function(err,allthelinks){
+  //   if(err){
+  //     throw err;
+  //   }
+  //   //res.json(instructorslist);
+  //  res.json(allthelinks);
+  // });
 };
 
 
 //this is just a show method to display all the json links
 linkcontroller.show = function(req, res) {
+
+
   res.send("this is the index")
+
+
   var allthelinks = Linklist.find({},function(err,allthelinks){
     if(err){
       throw err;

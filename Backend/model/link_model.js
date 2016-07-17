@@ -10,6 +10,4 @@ var linkSchema = new mongoose.Schema({
 
 
 var Linklist = mongoose.model('linklist', linkSchema);
-
-
 module.exports = Linklist;
