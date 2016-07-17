@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 
 var linkSchema = new mongoose.Schema({
-          link: String,
+          linkaddress: String,
           title: String
 
 });
