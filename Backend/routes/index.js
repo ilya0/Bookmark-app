@@ -7,6 +7,7 @@ var Linklist      = require('../model/link_model.js'); // model linking
 var links         = require('../Controller/link_controller.js'); //linking the controller links file
 var express       = require('express'); // including theexpress file in this file
 var router        = express.Router(); //simplifying the router
+var mongoose      = require('mongoose');
 
 
 
