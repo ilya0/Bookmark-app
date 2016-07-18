@@ -1,17 +1,21 @@
 var express       = require('express'); //linking the express module
 var app           = express(); //app instance of express
-var db            = require('../db'); // added db
+var db            = require('./db'); // added db
 var bodyParser    = require('body-parser');
 var port          = process.env.PORT || 3000; //  sets the listining port
-var Linklist      = require('../model/link_model.js'); // model linking
-var links         = require('../Controller/link_controller.js'); //linking the controller links file
+var Linklist      = require('./model/link_model.js'); // model linking
+var links         = require('./Controller/link_controller.js'); //linking the controller links file
 var express       = require('express'); // including theexpress file in this file
 var router        = express.Router(); //simplifying the router
 var mongoose      = require('mongoose');
+var morgan        = require('morgan');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(morgan('combined'));
 
 
-
-// //routes
+// //routes to seperate out later
 
 // router.route('/')
 //   .get(links.index)
