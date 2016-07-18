@@ -8,12 +8,13 @@ var links         = require('./Controller/link_controller.js'); //linking the co
 var express       = require('express'); // including theexpress file in this file
 var router        = express.Router(); //simplifying the router
 var mongoose      = require('mongoose');
-var morgan        = require('morgan');
+var logger        = require( 'morgan' ); //logs the shit into console
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(morgan('combined'));
 
+// Use middleware
+app.use( logger( 'dev' ) );
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded( { extended: false } ) );
 
 // //routes to seperate out later
 
@@ -32,29 +33,38 @@ app.use(morgan('combined'));
 app.get('/', function(req,res){
   var randarray = ["forest", "tree", "flower", "sky", "grass", "mountain"];
   var messagedisplay = randarray[Math.floor((Math.random() * randarray.length))];
-
+  console.log(messagedisplay);
   res.json({message:messagedisplay});
 });
 
 
 
-app.post('/', function(req,res){
-//this is where the link and name is cvreated
-var link = new Linklist(); // create a new object
+app.post('/links', function(req,res){
 
-link.title = req.body.title;  // adding the title param from the body to the title key in the object
-link.linkaddress = req.body.linkaddress;
-console.log(link); //just a test for the link
+        var link = new Linklist();
+        link.title = req.body.title;
+        link.linkaddress = req.body.linkaddress;
 
-link.save(function(err){ ///save the link and if theres an error do this
-  if(err){
-    throw err;
-  };
+        link.save(function(err) {
+            if (err)
+                res.send(err);
 
-res.json({sucess:true,message:'Link created! pow'});
-  });
+       res.json({sucess:true,message:'Link created! pow'});
+        });
 
 });
+
+
+
+// app.get('/links', function(req,res){
+
+// Linklist.find( {}, function( err, links ) {
+//     if ( err ) {
+//         console.log( err );
+//     } else {
+//         console.log( links );
+//     }
+// });
 
 
 
