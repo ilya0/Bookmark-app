@@ -56,15 +56,16 @@ app.post('/links', function(req,res){
 
 
 
-// app.get('/links', function(req,res){
+app.get('/links', function(req,res){
 
-// Linklist.find( {}, function( err, links ) {
-//     if ( err ) {
-//         console.log( err );
-//     } else {
-//         console.log( links );
-//     }
-// });
+Linklist.find( {}, function( err, links ) {
+    if ( err ) {
+        console.log( err );
+    } else {
+        console.log( links );
+    }
+});
+});
 
 
 
