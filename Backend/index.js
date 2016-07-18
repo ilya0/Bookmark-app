@@ -58,13 +58,27 @@ app.post('/links', function(req,res){
 
 app.get('/links', function(req,res){
 
-Linklist.find( {}, function( err, links ) {
-    if ( err ) {
-        console.log( err );
-    } else {
-        console.log( links );
-    }
+  Linklist.find( {}, function( err, links ) {
+      if ( err ) {
+          console.log( err );
+      } else {
+          console.log( links );
+      }
+        res.json({links});
+  });
 });
+
+app.delete('/:linkaddress', function(req,res){
+
+Linklist.findOneAndRemove({linkaddress:req.params.linkaddress},function(err,links){
+ if (err){
+    throw err;
+  }
+  res.json(links);
+  console.log("account removed");
+});
+
+
 });
 
 

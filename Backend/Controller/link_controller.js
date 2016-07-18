@@ -57,6 +57,21 @@ res.json({sucess:true,message:'Link created! pow'});
 
  };
 
+
+
+
+
+linkcontroller.destroy = function(req, res) {
+Linklist.findOneAndRemove({email:req.params.email},function(err,links){
+ if (err){
+    throw err;
+  }
+  res.json(links);
+  console.log("account removed");
+});
+
+};
+
 // linkcontroller.update = function(req, res) {};
 
 // linkcontroller.show = function(req, res) {};
