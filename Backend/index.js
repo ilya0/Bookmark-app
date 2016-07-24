@@ -10,6 +10,15 @@ var router        = express.Router(); //simplifying the router
 var mongoose      = require('mongoose');
 var logger        = require( 'morgan' ); //logs the shit into console
 
+///cross domain working?
+var allowCrossDomain = function(req, res, next) {
+   res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+   res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+   next();
+};
+
 
 // Use middleware
 app.use( logger( 'dev' ) );
