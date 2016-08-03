@@ -23,4 +23,4 @@ Node back end with mongoDB for database
 -   organize mvc - needs to be done
 -   routes -  need delete and id routs
 -   initialize db done
--   push to heroku - not done
+-   push to heroku - not done   
