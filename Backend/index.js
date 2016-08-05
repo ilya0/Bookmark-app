@@ -4,8 +4,8 @@ var db            = require('./db'); // added db
 var bodyParser    = require('body-parser');
 var port          = process.env.PORT || 3000; //  sets the listining port
 var Linklist      = require('./model/link_model.js'); // model linking
-var links         = require('./Controller/link_controller.js'); //linking the controller links file
-var express       = require('express'); // including theexpress file in this file
+var links         = require('../Backend/Controller/link_controller.js'); //linking the controller links file
+var express      = require('express'); // including theexpress file in this file
 var router        = express.Router(); //simplifying the router
 var mongoose      = require('mongoose');
 var logger        = require( 'morgan' ); //logs the shit into console
@@ -38,7 +38,7 @@ app.use( bodyParser.urlencoded( { extended: false } ) );
 
 
 
-//test for just routing working without routering
+//test for just routing working without routering will display random arrays
 app.get('/', function(req,res){
   var randarray = ["forest", "tree", "flower", "sky", "grass", "mountain"];
   var messagedisplay = randarray[Math.floor((Math.random() * randarray.length))];
@@ -47,7 +47,7 @@ app.get('/', function(req,res){
 });
 
 
-
+//this is to add the link
 app.post('/links', function(req,res){
 
         var link = new Linklist();
@@ -63,8 +63,20 @@ app.post('/links', function(req,res){
 
 });
 
+// this is to get all the links
+app.get('/showjson', function(req,res){
 
+  Linklist.find( {}, function( err, links ) {
+      if ( err ) {
+          console.log( err );
+      } else {
+          console.log( links );
+      }
+        res.json({links});
+  });
+});
 
+// this is to get all the links
 app.get('/links', function(req,res){
 
   Linklist.find( {}, function( err, links ) {
@@ -77,6 +89,8 @@ app.get('/links', function(req,res){
   });
 });
 
+
+//this is to delete the link
 app.delete('/:linkaddress', function(req,res){
 
 Linklist.findOneAndRemove({linkaddress:req.params.linkaddress},function(err,links){

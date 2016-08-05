@@ -21,11 +21,7 @@ linkcontroller.index = function(req, res) {
 
 //this is just a show method to display all the json links
 linkcontroller.show = function(req, res) {
-
-
   res.send("this is the index")
-
-
   var allthelinks = Linklist.find({},function(err,allthelinks){
     if(err){
       throw err;
