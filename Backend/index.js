@@ -85,7 +85,8 @@ app.get('/links', function(req,res){
       } else {
           console.log( links );
       }
-        res.json({links});
+        // res.render("../Bookmark/index.html");
+        res.sendFile("./Bookmark/index.html");
   });
 });
 
