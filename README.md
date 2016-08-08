@@ -24,3 +24,8 @@ Node back end with mongoDB for database
 -   routes -  need delete and id routs
 -   initialize db done
 -   push to heroku - not done   
+
+
+Run Sudo mongod in the backend 
+Run sudo nodemon in the frontend
+they work now, if not restart
