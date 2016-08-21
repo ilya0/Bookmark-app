@@ -47,7 +47,7 @@ app.get('/', function(req,res){
   var messagedisplay = randarray[Math.floor((Math.random() * randarray.length))];
   console.log(messagedisplay);
   // res.json({message:messagedisplay});
-  res.sendFile(path.join(__dirname + 'index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 
