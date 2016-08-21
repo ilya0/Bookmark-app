@@ -21,9 +21,9 @@ var allowCrossDomain = function(req, res, next) {
 
 
 // Use middleware
-app.use( logger( 'dev' ) );
-app.use( bodyParser.json() );
-app.use( bodyParser.urlencoded( { extended: false } ) );
+app.use( logger( 'dev' ) ); // this allows the loggin into the console
+app.use( bodyParser.json() ); //parses the json
+app.use( bodyParser.urlencoded( { extended: false } ) ); // this is to use routes encoding
 
 // //routes to seperate out later
 
