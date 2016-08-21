@@ -48,6 +48,8 @@ function pushdata(linkaddressvalue,titleboxvalue){
 
 
     });
+
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://www.example.org/ajax.php", true);
 xhr.setRequestHeader("X-My-Custom-Header", "some value");
