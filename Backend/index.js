@@ -5,10 +5,13 @@ var bodyParser    = require('body-parser');
 var port          = process.env.PORT || 3000; //  sets the listining port
 var Linklist      = require('./model/link_model.js'); // model linking
 var links         = require('../Backend/Controller/link_controller.js'); //linking the controller links file
-var express      = require('express'); // including theexpress file in this file
+var express       = require('express'); // including theexpress file in this file
 var router        = express.Router(); //simplifying the router
 var mongoose      = require('mongoose');
 var logger        = require( 'morgan' ); //logs the shit into console
+var path          = require('path');
+
+
 
 ///cross domain working?
 var allowCrossDomain = function(req, res, next) {
@@ -43,7 +46,8 @@ app.get('/', function(req,res){
   var randarray = ["forest", "tree", "flower", "sky", "grass", "mountain"];
   var messagedisplay = randarray[Math.floor((Math.random() * randarray.length))];
   console.log(messagedisplay);
-  res.json({message:messagedisplay});
+  // res.json({message:messagedisplay});
+  res.sendFile(path.join(__dirname + 'index.html'));
 });
 
 
