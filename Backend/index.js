@@ -62,10 +62,27 @@ app.post('/links', function(req,res){
             if (err)
                 res.send(err);
 
-       res.json({sucess:true,message:'Link created! pow'});
+     res.json({sucess:true,message:'Link created! pow'});
+
         });
 
 });
+
+// this is to get all the links
+app.get('/links', function(req,res){
+
+  Linklist.find( {}, function( err, links ) {
+      if ( err ) {
+          console.log( err );
+      } else {
+          console.log( links );
+      }
+  res.sendFile(path.join(__dirname + '/index.html'));
+
+  });
+});
+
+
 
 // this is to get all the links
 app.get('/showjson', function(req,res){
@@ -80,19 +97,7 @@ app.get('/showjson', function(req,res){
   });
 });
 
-// this is to get all the links
-app.get('/links', function(req,res){
 
-  Linklist.find( {}, function( err, links ) {
-      if ( err ) {
-          console.log( err );
-      } else {
-          console.log( links );
-      }
-        // res.render("../Bookmark/index.html");
-        res.sendFile("./Bookmark/index.html");
-  });
-});
 
 
 //this is to delete the link

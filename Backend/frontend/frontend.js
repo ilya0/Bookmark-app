@@ -4,6 +4,29 @@ console.log("js frontend script connected");
 
 $( document ).ready(function(){ //on ready command
 
+var givemedata ={};
+
+    $("testbutton").click(function(){
+        $.ajax({
+          url: "/links",
+           //context: document.body
+          }).done(function(data){
+              givemedata = data;
+            console.log(data);
+
+            $("#div1").html("this is changing the div1 on button click");
+
+
+//need to change the appropriate array keys to be displayed
+            for(i=0; i< data.results.length;i++){
+            console.log(data.results[i].name);
+            $("#div1").append(data.results[i].name);
+            $(".ulclass").append('<li>'+data.results[i].name+'</li>');
+
+            }
+
+           });
+        });
 
 
 
