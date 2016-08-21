@@ -1,34 +1,35 @@
 // frontend.js
 console.log("js frontend script connected");
 
-
 $( document ).ready(function(){ //on ready command
-
+console.log("document readied");
 var givemedata ={};
 
-    $("testbutton").click(function(){
-        $.ajax({
-          url: "/links",
-           //context: document.body
-          }).done(function(data){
-              givemedata = data;
-            console.log(data);
+//     $("testbutton").click(function(){
+//         $.ajax({
+//           url: "/links",
+//            //context: document.body
+//           }).done(function(data){
+//               givemedata = data;
+//             console.log(data);
 
-            $("#div1").html("this is changing the div1 on button click");
-
-
-//need to change the appropriate array keys to be displayed
-            for(i=0; i< data.results.length;i++){
-            console.log(data.results[i].name);
-            $("#div1").append(data.results[i].name);
-            $(".ulclass").append('<li>'+data.results[i].name+'</li>');
-
-            }
-
-           });
-        });
+//             $("#div1").html("this is changing the div1 on button click");
 
 
+// //need to change the appropriate array keys to be displayed
+//             for(i=0; i< data.results.length;i++){
+//             console.log(data.results[i].name);
+//             $("#div1").append(data.results[i].name);
+//             $(".ulclass").append('<li>'+data.results[i].name+'</li>');
+
+//             }
+
+//            });
+//         });
+
+$("#testbutton").click(function(){
+  console.log("test button pressed");
+}
 
     $("#inputbutton").click(function(){ //on button click do this following stuff
        var linkaddressvalue = $('#linkaddressbox').val();
