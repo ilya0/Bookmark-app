@@ -10,7 +10,7 @@ var router        = express.Router(); //simplifying the router
 var mongoose      = require('mongoose');
 var logger        = require( 'morgan' ); //logs the shit into console
 var path          = require('path');
-
+var http          = require('http'); // Im not sure if I need this I just cant get this fuckign http to link with the js and the css
 
 
 
@@ -21,7 +21,6 @@ app.use( logger( 'dev' ) ); // this allows the loggin into the console
 app.use( bodyParser.json() ); //parses the json
 app.use( bodyParser.urlencoded( { extended: false } ) ); // this is to use routes encoding
 app.use(express.static(path.join(__dirname, 'public'))); // for the serving up the public files
-
 
 // //routes to seperate out later
 
