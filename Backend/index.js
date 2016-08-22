@@ -13,20 +13,15 @@ var path          = require('path');
 
 
 
-///cross domain working?
-var allowCrossDomain = function(req, res, next) {
-   res.header('Access-Control-Allow-Origin', '*');
-   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-   res.header('Access-Control-Allow-Headers', 'Content-Type');
 
-   next();
-};
 
 
 // Use middleware
 app.use( logger( 'dev' ) ); // this allows the loggin into the console
 app.use( bodyParser.json() ); //parses the json
 app.use( bodyParser.urlencoded( { extended: false } ) ); // this is to use routes encoding
+app.use(express.static(path.join(__dirname, 'public'))); // for the serving up the public files
+
 
 // //routes to seperate out later
 
@@ -47,7 +42,7 @@ app.get('/', function(req,res){
   var messagedisplay = randarray[Math.floor((Math.random() * randarray.length))];
   console.log(messagedisplay);
   // res.json({message:messagedisplay});
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/views/index.html')); //goes through path and then opens the view
 });
 
 
