@@ -29,7 +29,9 @@ var givemedata ={};
 
 $("#testbutton").click(function(){
   console.log("test button pressed");
-}
+});
+
+
 
     $("#inputbutton").click(function(){ //on button click do this following stuff
        var linkaddressvalue = $('#linkaddressbox').val();
@@ -43,11 +45,7 @@ $("#testbutton").click(function(){
 
         pushdata(linkaddressvalue,titleboxvalue);
         console.log("pushdata ran");
-
-
-
-
-  });
+    });
 
 
 });
