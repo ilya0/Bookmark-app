@@ -25,6 +25,15 @@ Node back end with mongoDB for database
 -   initialize db done
 -   push to heroku - not done   
 
+Problems 
+still getting cross origin request
+
+Works
+Mongod works 
+db works to store stuff
+js connected 
+
+
 
 Run Sudo mongod in the backend 
 Run sudo nodemon in the frontend
